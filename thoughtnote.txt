@@ -1,0 +1,78 @@
+This Assigment is to make an Ecommerce project in Mern-stack.
+The assignment is divided into two parts-Frontend and Backend.
+
+NOTE:
+Please note that due to time constraints and computer issues->
+ 1)The paypal functionality may not always work successfully.- I did it the normal way and it stopped working after one time. 
+ Then i uninstalled all packages and used payment via braintree which was also able to process paypal.
+ Howewer, the paypal may not work sometimes.
+ Instead i have added a credit card option for payment--->CREDENTIALS FOR USE:
+ Card no: 4242 4242 4242 4242
+ Exp date:12/24
+ Cv:123
+ Note that other credential may not work due to secuirity inbuilt in braintree.
+ 2)I was unable to do the hosting and deployment.
+
+ Other than above problems, i had to remove most of the css due to extremely slow page loading. I have done only basic bootstrapping.
+
+ All intended functionalities of the project were completed.
+
+NOTE:
+STEPS FOR OPENING APP:
+Step 1: install all required dependencies sperately for frontend and backend.
+Step 2: enter backend folder and run npm dev.
+Since i have used concurrently package, frontend should staart automatically along with backend.
+If it dosen't please use npm start seperately for frontend.
+
+(If required for use)
+ Backend Environment variables:
+PORT = 8080
+MONGO_URL=mongodb+srv://alokvictor:ecommerce01@ecommerce.j4in8ak.mongodb.net/ecomshop
+JWT_TOK=GJSGHGVJ42434
+BRAINTREE_MERCHANT_ID=46sxd8qhms8zzk23
+BRAINTREE_PUBLIC_KEY=vzwvkfs3bdxf2g9h
+BRAINTREE_PRIVATE_KEY=2365571d0ce379359b7318a1fdfe1673
+
+Frontend Environment Variables:
+REACT_APP_API=http://localhost:8080
+
+Workflow:
+App user is directed to home page on start.
+In dashboard, there are options to Register or log in. The screen shows all products and shows filter as sidebar with search bar on header navbar.
+You can coose to add products to cart and login to buy or login first and add products to cart.
+A categories section is also made for all or specific categories.
+Once the user is logged in as user or admin, they can shop and add to cart or go to their dashboard and use functionalities like profile editing
+and order/product viewing.
+
+
+First i will explain ADMIN.
+NOTE:
+Login Credentials:
+email: admin@admin
+password: admin
+
+note that user was made admin by changing the role to 1(representing admin) from 0(for normal user) manually in mongodb.
+if another admin account needs to be made , tester will have to do the same by updating user data in mongodb.
+
+The admin dashboard contains many functionalities-
+
+NOTE:
+Before submitting project i will delete most products from database to reduce size excepting some for testing purposes.
+Note that Admin can add products and update them from their dashboard including images. (although not using multer). 
+i just added image as a buffer data in product schema(from a youtube tutorial).
+They can also make categories, view users list and view orders list.
+NOTE:
+Please note that rather than make a static shipping page for a user, i made an option to update their address before payment
+and the admin can set the status of the product to shipped or delivered among other status from the orders part of the admin dashboard
+and user can view changes in the orders section of his dashboard but not change it.
+
+backend was made with node, express for server and mongobd and mongoose for database.
+all required apis were made.
+The flow goes from MODELS-->ROUTES-->CONTROLLERS with middlewares usage.
+authetication done using jsonwebtoken and bcrypt used for passwords. 
+some packages like slugify, nodemon etc were used for some sections.(referred from youtube tutorials) 
+frontend was made using react js and context for state management and bootstrap for styling.
+some packages like react-router dom,axios,toastify-hot toast,braintree were also used for some parts.(referred from youtube tutorials)
+
+overall the app works as intended and may run a little slow even if i did minimal styling and i'm not sure if it is my computers problem.
+so please have some patience so that the functionalities work as intended or try refreshing.
